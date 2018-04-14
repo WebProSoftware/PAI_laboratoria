@@ -21,6 +21,9 @@ class database {
     }
 
     function query($q=""){
+        echo "<pre>";
+        print_r($q);
+        echo "</pre>";
         return mysqli_query($this->connect(), $q);
     }
 }

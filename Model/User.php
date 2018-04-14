@@ -16,18 +16,19 @@ function insertUser(){
     $temp_imie = $_POST["imie"];
     $temp_nazwisko = $_POST["nazwisko"];
     $temp_email = $_POST["email"];
-    $temo_haslo = $_POST["haslo"];
+    $temp_haslo = $_POST["haslo"];
     $temp_haslo2 = $_POST["haslo2"];
+    
 
     $database = new Database();
     $database->connect();
 
-    if($temo_haslo===$temp_haslo2){
+    if($temp_haslo===$temp_haslo2){
 
         if($database->query("INSERT INTO `user` (`email`, `password`, `name`, `surname`) 
-        VALUES ('$temp_email', md5('$temo_haslo'), '$temp_imie', '$temp_nazwisko');
+        VALUES ('$temp_email', '".md5('$temp_haslo')."', '$temp_imie', '$temp_nazwisko');
         ")){
-            header("location: ../View/index.php?msg=OK");
+            header("location: ../index.php?msg=OK");
         }else{
             echo "User not insert to db.";
             die();

@@ -1,11 +1,12 @@
-<?php include_once '../Config/database.php'; ?>
-<?php include_once '../Model/User.php'; ?>
+<?php include_once 'Config/database.php'; ?>
+<?php include_once 'Model/User.php'; ?>
 
 <!DOCTYPE html>
-<?php include_once 'header.php'; ?>
+<?php include_once 'View/header.php'; ?>
 <html lang="en">
 <body>
 <div class="container">
+
 
     <div class="panel panel-danger info">
       <div class="panel-heading">
@@ -17,6 +18,11 @@
       </div>
     </div>
 
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <button><a href="register.php">Rejestruj nowego klienta</a></button>
+        </div>
+    </div>
 
     <div class="table-responsive">
     <table class="table table-bordered">
@@ -33,7 +39,7 @@
     </table>
     </div>
 
-<?php include_once 'footer.php'; ?>
+<?php include_once 'View/footer.php'; ?>
 </div>
 </body>
 </html>
